@@ -19,9 +19,9 @@ class Creditcard implements Cloneable
         return super.clone();
     }
 
-    public String equalis(Creditcard cc1)
+    public String equalis(Creditcard a)
     {
-        if(cardnumber.equals(cc1.cardnumber))
+        if(cardnumber.equals(a.cardnumber))
         {
             return "true";
         }
