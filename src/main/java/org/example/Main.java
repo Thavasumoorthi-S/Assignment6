@@ -22,8 +22,11 @@ class Creditcard implements Cloneable
     public String equals(Creditcard cc1)
     {
         String result;
-        result=(cardnumber==cc1.cardnumber)?"true":"false";
-        return result;
+        if(cardnumber==cc1.cardnumber)
+        {
+            return "true";
+        }
+        return "false";
     }
     public static void main(String[] args) throws CloneNotSupportedException
     {
