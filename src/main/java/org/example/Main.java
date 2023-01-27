@@ -21,7 +21,6 @@ class Creditcard implements Cloneable
 
     public String equalis(Creditcard cc1)
     {
-        String result;
         if(cardnumber.equals(cc1.cardnumber))
         {
             return "true";
@@ -36,6 +35,8 @@ class Creditcard implements Cloneable
         String holdername1;
         long cardnumber1;
         String expiredate1;
+        String result1;
+        String result2;
         Scanner sc=new Scanner(System.in);
         LOGGER.log(Level.INFO,"Enter the Name: ");
         holdername=sc.nextLine();
@@ -46,7 +47,9 @@ class Creditcard implements Cloneable
         expiredate=sc.nextLine();
         Creditcard cc=new Creditcard(holdername, cardnumber, expiredate);
         Creditcard cc1=(Creditcard) cc.clone();
-        LOGGER.log(Level.INFO,"current object creditcardnumber and clonable object creditcard numbers are same? :"+cc.equalis(cc1));
+        LOGGER.log(Level.INFO,"current object creditcardnumber and clonnable object creditcard numbers are same? :");
+        result1=cc.equalis(cc1);
+        LOGGER.info(result1);
         LOGGER.log(Level.INFO,"Enter the Name: ");
         holdername1=sc.nextLine();
         LOGGER.log(Level.INFO,"Enter the cardnumber:  ");
@@ -55,6 +58,8 @@ class Creditcard implements Cloneable
         LOGGER.log(Level.INFO,"Enter the expiredate:");
         expiredate1=sc.nextLine();
         Creditcard cc2=new Creditcard((holdername1), cardnumber1, expiredate1);
-        LOGGER.log(Level.INFO,"current object creditcardnumber and new object creditcard numbers are same? :"+cc.equalis(cc2));
+        LOGGER.log(Level.INFO,"current object creditcardnumber and new object creditcard numbers are same? :");
+        result2=cc.equalis(cc2);
+        LOGGER.info(result2);
     }
 }
