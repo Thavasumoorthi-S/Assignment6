@@ -29,7 +29,6 @@ class Creditcard implements Cloneable
     }
     public static void main(String[] args) throws CloneNotSupportedException
     {
-        try {
             String holdername;
             long cardnumber;
             String expiredate;
@@ -62,10 +61,5 @@ class Creditcard implements Cloneable
             LOGGER.log(Level.INFO, "current object creditcardnumber and new object creditcard numbers are same? :");
             result2 = cc.equalis(cc2);
             LOGGER.info(result2);
-        }
-        catch(InputMismatchException e)
-        {
-            throw new InputMismatchException("please Enter the valid input ");
-        }
     }
 }
