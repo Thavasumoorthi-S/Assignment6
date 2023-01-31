@@ -2,7 +2,7 @@ package org.example;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-class Creditcard implements Cloneable
+class Creditcard
 {
     private static final Logger LOGGER=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     String holdername;
@@ -14,9 +14,11 @@ class Creditcard implements Cloneable
         this.cardnumber=cardnumber;
         this.expiredate=expiredate;
     }
-    public Object clone() throws CloneNotSupportedException
+    Creditcard(Creditcard obj)
     {
-        return super.clone();
+        holdername=obj.holdername;
+        cardnumber=obj.cardnumber;
+        expiredate=obj.expiredate;
     }
 
     public String equalis(Creditcard a)
@@ -27,7 +29,7 @@ class Creditcard implements Cloneable
         }
         return "false";
     }
-    public static void main(String[] args) throws CloneNotSupportedException
+    public static void main(String[] args)
     {
             String holdername;
             long cardnumber;
@@ -46,7 +48,7 @@ class Creditcard implements Cloneable
             LOGGER.log(Level.INFO, "Enter the expiredate:");
             expiredate = sc.nextLine();
             Creditcard cc = new Creditcard(holdername, cardnumber, expiredate);
-            Creditcard cc1 = (Creditcard) cc.clone();
+            Creditcard cc1 = new Creditcard(cc);
             LOGGER.log(Level.INFO, "current object creditcardnumber and clonnable object creditcard numbers are same? :");
             result1 = cc.equalis(cc1);
             LOGGER.info(result1);
