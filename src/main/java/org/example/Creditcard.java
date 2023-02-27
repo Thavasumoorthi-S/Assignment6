@@ -21,7 +21,7 @@ class Creditcard
         expiredate=obj.expiredate;
     }
 
-    public String equalis(Creditcard a)
+    public String equals(Creditcard a)
     {
         if(cardnumber.equals(a.cardnumber))
         {
@@ -34,34 +34,25 @@ class Creditcard
             String holdername;
             long cardnumber;
             String expiredate;
-            String holdername1;
-            long cardnumber1;
-            String expiredate1;
-            String result1;
-            String result2;
             Scanner sc = new Scanner(System.in);
             LOGGER.log(Level.INFO, "Enter the Name: ");
             holdername = sc.nextLine();
             LOGGER.log(Level.INFO, "Enter the cardnumber:  ");
             cardnumber = sc.nextLong();
             sc.nextLine();
-            LOGGER.log(Level.INFO, "Enter the expiredate:");
+            LOGGER.log(Level.INFO, "Enter the expiredate dd-mm-yyyy:");
             expiredate = sc.nextLine();
             Creditcard cc = new Creditcard(holdername, cardnumber, expiredate);
             Creditcard cc1 = new Creditcard(cc);
-            LOGGER.log(Level.INFO, "current object creditcardnumber and clonnable object creditcard numbers are same? :");
-            result1 = cc.equalis(cc1);
-            LOGGER.info(result1);
+            LOGGER.info("current object creditcardnumber and clonnable object creditcard numbers are same? :"+cc.equals(cc1));
             LOGGER.log(Level.INFO, "Enter the Name: ");
-            holdername1 = sc.nextLine();
+            holdername = sc.nextLine();
             LOGGER.log(Level.INFO, "Enter the cardnumber:  ");
-            cardnumber1 = sc.nextLong();
+            cardnumber= sc.nextLong();
             sc.nextLine();
             LOGGER.log(Level.INFO, "Enter the expiredate:");
-            expiredate1 = sc.nextLine();
-            Creditcard cc2 = new Creditcard((holdername1), cardnumber1, expiredate1);
-            LOGGER.log(Level.INFO, "current object creditcardnumber and new object creditcard numbers are same? :");
-            result2 = cc.equalis(cc2);
-            LOGGER.info(result2);
+            expiredate = sc.nextLine();
+            Creditcard cc2 = new Creditcard(holdername,cardnumber,expiredate);
+            LOGGER.info("current object creditcardnumber and new object creditcard numbers are same? :"+cc.equals(cc2));
     }
 }
