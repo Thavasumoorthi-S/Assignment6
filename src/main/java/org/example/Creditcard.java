@@ -34,6 +34,7 @@ class Creditcard
             String holdername;
             long cardnumber;
             String expiredate;
+            String result;
             Scanner sc = new Scanner(System.in);
             LOGGER.log(Level.INFO, "Enter the Name: ");
             holdername = sc.nextLine();
@@ -44,7 +45,8 @@ class Creditcard
             expiredate = sc.nextLine();
             Creditcard cc = new Creditcard(holdername, cardnumber, expiredate);
             Creditcard cc1 = new Creditcard(cc);
-            LOGGER.info("current object creditcardnumber and clonnable object creditcard numbers are same? :"+cc.equals(cc1));
+            result="current object creditcardnumber and clonnable object creditcard numbers are same? :"+cc.equals(cc1);
+            LOGGER.info(result);
             LOGGER.log(Level.INFO, "Enter the Name: ");
             holdername = sc.nextLine();
             LOGGER.log(Level.INFO, "Enter the cardnumber:  ");
@@ -53,6 +55,7 @@ class Creditcard
             LOGGER.log(Level.INFO, "Enter the expiredate:");
             expiredate = sc.nextLine();
             Creditcard cc2 = new Creditcard(holdername,cardnumber,expiredate);
-            LOGGER.info("current object creditcardnumber and new object creditcard numbers are same? :"+cc.equals(cc2));
+            result="current object creditcardnumber and new object creditcard numbers are same? :"+cc.equals(cc2);
+            LOGGER.info(result);
     }
 }
